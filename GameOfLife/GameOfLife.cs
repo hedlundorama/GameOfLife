@@ -58,12 +58,16 @@ namespace GOL
                     if (_board[x, y] == 0)
                     {
                         if (neighbours == 3) boardNext[x, y] = 1;
+                        continue;
                     }
 
-                    if (_board[x, y] != 1) continue;
-                    if (neighbours < 2) boardNext[x, y] = 0;
-                    if (neighbours == 2 || neighbours == 3) boardNext[x, y] = 1;
-                    if (neighbours > 3) boardNext[x, y] = 0;
+                    if (neighbours < 2 || neighbours > 3)
+                    {
+                        boardNext[x, y] = 0;
+                        continue;
+                    }
+
+                    boardNext[x, y] = 1;
                 }
             }
 

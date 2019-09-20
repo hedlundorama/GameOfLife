@@ -9,8 +9,8 @@ namespace GameOfLifeConsole
         static void Main(string[] args)
         {
             var gol = new GameOfLife(150,50);
-            gol.Randomize();
-            
+            //gol.Randomize();
+            gol.GosperGliderGun();
             while (true)
             {
                 Thread.Sleep(75);
